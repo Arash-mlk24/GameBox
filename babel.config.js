@@ -1,0 +1,41 @@
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        cwd: 'babelrc',
+        extensions: [
+          '.ios.ts',
+          '.android.ts',
+          '.ts',
+          '.ios.tsx',
+          '.android.tsx',
+          '.tsx',
+          '.jsx',
+          '.js',
+          '.json',
+        ],
+        alias: {
+          '@components': ['./src/components'],
+          '@controller': ['./src/controller'],
+          '@constants': ['./src/constants'],
+          '@database': ['./src/database'],
+          '@items': ['./src/items'],
+          '@network': ['./src/network'],
+          '@res': ['./src/res'],
+          '@values': ['./src/res/values'],
+          '@styles': ['./src/res/styles'],
+          '@router': ['./src/router'],
+          '@screens': ['./src/screens'],
+          '@reduxStore': ['./src/store'],
+          '@actions': ['./src/reduxStore/actions'],
+          '@reducers': ['./src/reduxStore/reducers'],
+          '@sagas': ['./src/reduxStore/sagas'],
+          '@utils': ['./src/utils'],
+          '@manager': ['./src/manager'],
+        },
+      },
+    ],
+  ],
+};
