@@ -8,19 +8,19 @@
  * @format
  */
 
-import {NavigationContainer} from '@react-navigation/native';
-import SplashScreen from '@screens/splashScreen/SplashScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import MainNavigation from '@router/MainNavigation';
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {Provider} from 'react-redux';
-import store from './reduxStore/store';
+import { StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
         <StatusBar backgroundColor={'#FFFFFF'} barStyle={'dark-content'} />
-        <SplashScreen />
+        <MainNavigation />
       </NavigationContainer>
     </Provider>
   );

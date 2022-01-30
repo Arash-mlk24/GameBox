@@ -1,17 +1,13 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
-import infoReducer from './slices/infoSlice';
-import dumpReducer from './slices/dumpSlice';
-import orderTypeReducer from './slices/orderTypeSlice';
-import cardBankItem from './slices/cardBankItem';
-import tempReducer from './slices/tempSlice';
+import splashReducer from '@store/slices/splashSlice';
+import baseReducer from '@store/slices/baseSlice';
+import loginReducer from '@store/slices/loginSlice';
 
 export const store = configureStore({
   reducer: {
-    info: infoReducer,
-    dump: dumpReducer,
-    orderType: orderTypeReducer,
-    cardBankItem: cardBankItem,
-    temp: tempReducer,
+    base: baseReducer,
+    splash: splashReducer,
+    login: loginReducer,
   },
 });
 

@@ -37,6 +37,9 @@
     "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
     // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
     "paths": {
+      "@base/*": [
+        "./src/base/*"
+      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -70,20 +73,23 @@
       "@screens/*": [
         "./src/screens/*"
       ],
-      "@reduxStore/*": [
-        "./src/reduxStore/*"
+      "@store/*": [
+        "./src/store/*"
       ],
       "@actions/*": [
-        "./src/reduxStore/actions/*"
+        "./src/store/actions/*"
       ],
       "@reducers/*": [
-        "./src/reduxStore/reducers/*"
+        "./src/store/reducers/*"
       ],
       "@sagas/*": [
-        "./src/reduxStore/sagas/*"
+        "./src/store/sagas/*"
       ],
       "@utils/*": [
         "./src/utils/*"
+      ],
+      "@types/*": [
+        "./src/utils/types/*"
       ],
       "@manager/*": [
         "./src/manager/*"

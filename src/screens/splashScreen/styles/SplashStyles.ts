@@ -1,6 +1,6 @@
-import BaseStyles from '@res/styles/BaseStyles';
-import {height} from '@utils/scaling';
 import {StyleSheet} from 'react-native';
+import BaseStyles from '../../../base/BaseStyles';
+import {height} from '@utils/scaling';
 
 export default class SplashStyles extends BaseStyles {
   constructor() {

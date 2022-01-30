@@ -1,4 +1,3 @@
-import IGameManager from '@manager/IGameManager';
 import {GameType, GameState} from '@utils/enums';
 import IGame from '../../IGame';
 import Time from '../../Time';
