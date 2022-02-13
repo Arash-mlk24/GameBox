@@ -9,4 +9,5 @@ export type SplashState = {};
 export type LoginState = {
   phoneNumber?: string;
   password?: string;
+  count?: number;
 };

@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MainStackParamList } from '@utils/types/NavigationTypes';
+import { MainStackParamsList } from '@utils/types/NavigationTypes';
 import SplashScreen from '@screens/splashScreen/SplashScreen';
 import LoginScreen from '@screens/loginScreen/LoginScreen';
+import TabStack from './TabStack';
 
-const { Navigator, Screen } = createNativeStackNavigator<MainStackParamList>();
+const { Navigator, Screen } = createNativeStackNavigator<MainStackParamsList>();
 
 export default function MainNavigation() {
     return (
-        <Navigator initialRouteName="SPLASH" screenOptions={{ headerShown: false }}>
+        <Navigator initialRouteName="LOGIN" screenOptions={{ headerShown: false }}>
             <Screen name='SPLASH' component={SplashScreen} />
             <Screen name='LOGIN' component={LoginScreen} />
+            <Screen name='TAB' component={TabStack} />
         </Navigator>
     );
 }
