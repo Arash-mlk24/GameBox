@@ -9,7 +9,7 @@ const { Navigator, Screen } = createNativeStackNavigator<MainStackParamsList>();
 
 export default function MainNavigation() {
     return (
-        <Navigator initialRouteName="LOGIN" screenOptions={{ headerShown: false }}>
+        <Navigator initialRouteName="TAB" screenOptions={{ headerShown: false }}>
             <Screen name='SPLASH' component={SplashScreen} />
             <Screen name='LOGIN' component={LoginScreen} />
             <Screen name='TAB' component={TabStack} />

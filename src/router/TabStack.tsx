@@ -9,8 +9,8 @@ const { Navigator, Screen } = createMaterialBottomTabNavigator<TabStackParamsLis
 export default function TabStack() {
     return (
         <Navigator initialRouteName='HOME'>
-            <Screen name='HOME' component={HomeScreen} />
             <Screen name='SETTINGS' component={SettingsScreen} />
+            <Screen name='HOME' component={HomeScreen} />
         </Navigator>
     );
 }

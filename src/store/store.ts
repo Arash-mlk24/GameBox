@@ -2,18 +2,21 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import splashReducer from '@store/slices/splashSlice';
 import baseReducer from '@store/slices/baseSlice';
 import loginReducer from '@store/slices/loginSlice';
+import homeReducer from './slices/homeSlice';
 
 export const store = configureStore({
   reducer: {
     base: baseReducer,
     splash: splashReducer,
     login: loginReducer,
+    home: homeReducer
   },
   middleware: getDefaultMiddleware => {
     return getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
           'login',
+          'home'
         ],
         ignoredActionPaths: ['payload'],
       },
