@@ -11,7 +11,7 @@ export default class HomeStyles extends BaseStyles {
     mainContainer: {
       width: widths.screenMainContainer,
       height: heights.screenMainContainer,
-      backgroundColor: CommonColors.WHITE,
+      backgroundColor: CommonColors.DARK_WHITE,
       paddingTop: 25,
     },
     mainContentContainer: {

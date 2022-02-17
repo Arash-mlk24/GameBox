@@ -15,7 +15,7 @@ function ProfileButton(props: IProfileButton) {
 
     return (
         <TouchableOpacity onPress={props.onPress} activeOpacity={0.6} style={styles.statics.mainContainer}>
-            <AccountIcon width={64} height={64} fill={CommonColors.WHITE} />
+            <AccountIcon width={64} height={64} fill={CommonColors.TERTIARY} />
             <Text style={[styles.baseStatics.baseText, styles.statics.text]}>Me</Text>
         </TouchableOpacity>
     );
@@ -38,7 +38,7 @@ class ProfileButtonStyles extends BaseStyles {
         },
         text: {
             fontSize: 36,
-            color: CommonColors.WHITE,
+            color: CommonColors.TERTIARY,
         }
     })
 

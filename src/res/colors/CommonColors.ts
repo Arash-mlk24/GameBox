@@ -1,5 +1,7 @@
 export default {
-  WHITE: '#FFFFFF',
+  DARK_WHITE: '#F0F0F0',
   LIGHT_BACK_BLUE: '#C9F3F2',
-  PRIMARY: '#FF9912',
+  PRIMARY: '#21325E',
+  SECONDARY: '#3E497A',
+  TERTIARY: '#F1D00A',
 };

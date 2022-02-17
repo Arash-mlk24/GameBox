@@ -15,7 +15,7 @@ const SplashScreen = () => {
     <View style={styles.statics.mainContainer}>
       <LinearGradientBG
         gradientType="top-to-bottom"
-        topColor={CommonColors.WHITE}
+        topColor={CommonColors.DARK_WHITE}
         bottomColor={CommonColors.LIGHT_BACK_BLUE}
       />
       <Text style={[styles.baseStatics.baseText, styles.statics.text]}>
