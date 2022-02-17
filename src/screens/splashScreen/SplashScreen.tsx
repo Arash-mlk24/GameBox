@@ -23,7 +23,7 @@ const SplashScreen = () => {
       Helper.getInstance().mainNavigation = mainNav;
       Helper.getInstance().tabNavigation = tabNav;
       // removeData(Keys.ACTIVE_CAR);
-      mainNav.navigate('TAB');
+      mainNav.replace('TAB');
     }, 3000)
   }, []);
 
