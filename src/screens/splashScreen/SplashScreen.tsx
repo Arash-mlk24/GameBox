@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import LinearGradientBG from '@components/LinearGradientBG';
 import LottieView from 'lottie-react-native';
 import CommonColors from '@res/colors/CommonColors';
 import SplashController from './controller/SplashController';
 import SplashStyles from './styles/SplashStyles';
+import Helper from '@utils/Helper';
+import { useNavigation } from '@react-navigation/native';
+import { MainStackNavigationProp, TabStackNavigationProp } from '@utils/types/NavigationTypes';
 
 const SplashScreen = () => {
 
   const styles = new SplashStyles();
   const controller = new SplashController();
+
+  const tabNav = useNavigation<TabStackNavigationProp>();
+  const mainNav = useNavigation<MainStackNavigationProp>();
+
+  useEffect(() => {
+    // initialize helper
+    setTimeout(() => {
+      Helper.getInstance().mainNavigation = mainNav;
+      Helper.getInstance().tabNavigation = tabNav;
+      // removeData(Keys.ACTIVE_CAR);
+      mainNav.navigate('TAB');
+    }, 3000)
+  }, []);
 
   return (
     <View style={styles.statics.mainContainer}>

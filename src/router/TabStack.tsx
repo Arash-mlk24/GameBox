@@ -69,12 +69,12 @@ class TabStackStyles extends BaseStyles {
 
     public statics = StyleSheet.create({
         barIcon: {
-            width: width / 2,
-            height: 48,
-            justifyContent: 'flex-end',
+            width: 120,
+            height: 54,
+            justifyContent: 'center',
             alignItems: 'center',
             position: 'absolute',
-            bottom: -15,
+            top: -15,
         }
     })
 

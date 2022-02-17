@@ -2,6 +2,7 @@ export default {
   WHITE: '#FFFFFF',
   DARK_WHITE: '#F0F0F0',
   GREY: '#929292',
+  LIGHT_GREY: '#BFBFBF',
   LIGHT_BACK_BLUE: '#C9F3F2',
   PRIMARY: '#21325E',
   SECONDARY: '#3E497A',

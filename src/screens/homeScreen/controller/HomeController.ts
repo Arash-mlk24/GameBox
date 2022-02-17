@@ -1,8 +1,10 @@
 import BaseController from '@base/BaseController';
 import { homeActions, homeStates } from '@store/slices/homeSlice';
 import store from '@store/store';
+import Helper from '@utils/Helper';
 
 export default class HomeController extends BaseController {
+
   public actions;
   public states;
 
@@ -13,7 +15,15 @@ export default class HomeController extends BaseController {
   }
 
   public handleOnMePress() {
-    console.log(`hi`);
+    Helper.getInstance().tabNavigation.navigate('SETTINGS');
+  }
+
+  public handleOnXOPress() {
+    Helper.getInstance().mainNavigation.navigate('XO');
+  }
+
+  public handleOnChessPress() {
+    console.log(`CHESS...`);
   }
 
 }

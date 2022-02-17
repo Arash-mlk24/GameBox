@@ -1,6 +1,8 @@
-import {baseActions, baseStates} from '@store/slices/baseSlice';
+import { baseActions, baseStates } from '@store/slices/baseSlice';
+import Helper from '@utils/Helper';
 
 export default class BaseController {
+
   public baseAcions;
   public baseStates;
 

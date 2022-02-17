@@ -9,6 +9,7 @@ export const heights = {
     screenMainContainer: height - 56,
     profileButton: 240,
     quickAccess: 240,
+    quickAccessGameButton: 108,
 }
 
 export const widths = {
