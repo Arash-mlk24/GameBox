@@ -1,4 +1,4 @@
-import { Token } from '@types/ClientTypes';
+import { Token } from '@appTypes/ClientTypes';
 
 export type BaseState = {
   token?: Token;

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import BaseStyles from '../../../base/BaseStyles';
-import { height, width } from '@utils/scaling';
+import { commonWidth, heights, widths } from '@utils/scaling';
 import CommonColors from '@res/colors/CommonColors';
 
 export default class HomeStyles extends BaseStyles {
@@ -9,10 +9,25 @@ export default class HomeStyles extends BaseStyles {
   }
   public statics = StyleSheet.create({
     mainContainer: {
+      width: widths.screenMainContainer,
+      height: heights.screenMainContainer,
+      backgroundColor: CommonColors.WHITE,
+      paddingTop: 25,
+    },
+    mainContentContainer: {
       alignItems: 'center',
-      width: width,
-      height: height - 56,
-      backgroundColor: CommonColors.WHITE
+    },
+    quickAccess: {
+      flexDirection: 'row',
+      width: commonWidth,
+      height: heights.quickAccess,
+      justifyContent: 'space-between'
+    },
+    quickAccessGamesContainer: {
+      width: widths.profileButton,
+      height: heights.quickAccess,
+      justifyContent: 'space-between',
+      alignItems: 'center'
     },
     button: {
       marginTop: 25,

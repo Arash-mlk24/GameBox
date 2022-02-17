@@ -33,7 +33,7 @@ module.exports = {
           '@reducers': ['./src/store/reducers'],
           '@sagas': ['./src/store/sagas'],
           '@utils': ['./src/utils'],
-          '@types': ['./src/utils/types'],
+          '@appTypes': ['./src/utils/types'],
           '@manager': ['./src/manager'],
         },
       },

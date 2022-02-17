@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import store, { RootState } from '../store';
+import { RootState } from '../store';
 import { LoginState } from '@utils/types/ReduxTypes';
 import { Dispatch, SetStateAction } from 'react';
 

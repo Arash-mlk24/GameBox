@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import ProfileButton from './components/profileButton/ProfileButton';
 import HomeController from './controller/HomeController';
 import HomeStyles from './styles/HomeStyles';
 
@@ -9,8 +10,13 @@ export default function HomeScreen() {
     const controller = new HomeController();
 
     return (
-        <View style={styles.statics.mainContainer}>
+        <ScrollView contentContainerStyle={styles.statics.mainContentContainer} style={styles.statics.mainContainer}>
             {/* <TextButton /> */}
-        </View>
+            <View style={styles.statics.quickAccess}>
+                <View style={styles.statics.quickAccessGamesContainer}></View>
+                <ProfileButton onPress={controller.handleOnMePress} />
+            </View>
+            <View></View>
+        </ScrollView>
     );
 }

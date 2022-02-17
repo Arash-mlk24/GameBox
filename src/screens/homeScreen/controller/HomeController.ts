@@ -11,4 +11,9 @@ export default class HomeController extends BaseController {
     this.states = homeStates(store.getState());
     this.actions = homeActions;
   }
+
+  public handleOnMePress() {
+    console.log(`hi`);
+  }
+
 }
