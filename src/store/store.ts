@@ -3,20 +3,24 @@ import splashReducer from '@store/slices/splashSlice';
 import baseReducer from '@store/slices/baseSlice';
 import loginReducer from '@store/slices/loginSlice';
 import homeReducer from './slices/homeSlice';
+import xoTypeSelectionReducer from './slices/xoTypeSelectionSlice';
 
 export const store = configureStore({
   reducer: {
     base: baseReducer,
     splash: splashReducer,
     login: loginReducer,
-    home: homeReducer
+    home: homeReducer,
+    xoTypeSelection: xoTypeSelectionReducer
   },
   middleware: getDefaultMiddleware => {
     return getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
           'login',
-          'home'
+          'home',
+          'base',
+          'xoTypeSelection',
         ],
         ignoredActionPaths: ['payload'],
       },

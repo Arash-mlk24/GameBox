@@ -13,8 +13,8 @@ const LinearGradientBG = (props: ILinearGradientBG) => {
   return props.gradientType === 'left-to-right' ? (
     <LinearGradient
       colors={[props.leftColor, props.rightColor]}
-      start={{x: 0, y: 0.0}}
-      end={{x: 1, y: 0.0}}
+      start={{ x: 0, y: 0.0 }}
+      end={{ x: 1, y: 0.0 }}
       style={{
         position: 'absolute',
         width: '100%',
@@ -25,8 +25,8 @@ const LinearGradientBG = (props: ILinearGradientBG) => {
   ) : (
     <LinearGradient
       colors={[props.topColor, props.bottomColor]}
-      start={{x: 0.0, y: 0.4}}
-      end={{x: 0.0, y: 1}}
+      start={{ x: 0.0, y: 0.4 }}
+      end={{ x: 0.0, y: 1 }}
       style={{
         position: 'absolute',
         width: '100%',

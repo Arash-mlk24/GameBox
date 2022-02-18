@@ -12,6 +12,10 @@ export type LoginState = {
   count?: number;
 };
 
+export type XOTypeSelectionState = {
+  roundsCount?: number;
+}
+
 export type HomeState = {
   count?: number;
 };

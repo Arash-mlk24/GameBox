@@ -10,6 +10,7 @@ export const heights = {
     profileButton: 240,
     quickAccess: 240,
     quickAccessGameButton: 108,
+    gradientTextButton: 60,
 }
 
 export const widths = {
