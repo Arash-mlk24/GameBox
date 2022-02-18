@@ -5,6 +5,7 @@ import SplashScreen from '@screens/splashScreen/SplashScreen';
 import LoginScreen from '@screens/loginScreen/LoginScreen';
 import TabStack from './TabStack';
 import XOScreen from '@screens/xoScreen/XOScreen';
+import XOTypeSelectionScreen from '@screens/xoTypeSelectionScreen/XOTypeSelectionScreen';
 
 const { Navigator, Screen } = createNativeStackNavigator<MainStackParamsList>();
 
@@ -19,9 +20,18 @@ export default function MainNavigation() {
                 component={XOScreen}
                 options={{
                     presentation: 'card',
+                    animation: 'slide_from_bottom'
+                }}
+            />
+            <Screen
+                name='XO_TYPE_SELECTION'
+                component={XOTypeSelectionScreen}
+                options={{
+                    presentation: 'card',
                     animation: 'slide_from_left'
                 }}
             />
+
         </Navigator>
     );
 }

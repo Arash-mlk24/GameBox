@@ -19,7 +19,7 @@ export default class HomeController extends BaseController {
   }
 
   public handleOnXOPress() {
-    Helper.getInstance().mainNavigation.navigate('XO');
+    Helper.getInstance().mainNavigation.navigate('XO_TYPE_SELECTION');
   }
 
   public handleOnChessPress() {

@@ -5,6 +5,7 @@ export type MainStackParamsList = {
   LOGIN: undefined;
   TAB: undefined;
   XO: undefined;
+  XO_TYPE_SELECTION: undefined;
 };
 export type MainStackNavigationProp =
   NativeStackNavigationProp<MainStackParamsList>;
