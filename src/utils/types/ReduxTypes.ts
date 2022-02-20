@@ -1,4 +1,5 @@
 import { Token } from '@appTypes/ClientTypes';
+import XO from '../../model/games/xo/XO';
 
 export type BaseState = {
   token?: Token;
@@ -14,6 +15,10 @@ export type LoginState = {
 
 export type XOTypeSelectionState = {
   roundsCount?: number;
+}
+
+export type XOState = {
+  xo?: XO;
 }
 
 export type HomeState = {

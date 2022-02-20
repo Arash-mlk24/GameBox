@@ -1,4 +1,4 @@
-export default class name {
+export default class User {
   private _name: string;
 
   public get name(): string {
@@ -8,7 +8,7 @@ export default class name {
     this._name = value;
   }
 
-  constructor() {
-    this._name = '';
+  constructor(name: string) {
+    this._name = name;
   }
 }

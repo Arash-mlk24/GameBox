@@ -4,6 +4,7 @@ import baseReducer from '@store/slices/baseSlice';
 import loginReducer from '@store/slices/loginSlice';
 import homeReducer from './slices/homeSlice';
 import xoTypeSelectionReducer from './slices/xoTypeSelectionSlice';
+import xoReducer from './slices/xoSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     splash: splashReducer,
     login: loginReducer,
     home: homeReducer,
-    xoTypeSelection: xoTypeSelectionReducer
+    xoTypeSelection: xoTypeSelectionReducer,
+    xo: xoReducer
   },
   middleware: getDefaultMiddleware => {
     return getDefaultMiddleware({
@@ -21,6 +23,7 @@ export const store = configureStore({
           'home',
           'base',
           'xoTypeSelection',
+          'xo'
         ],
         ignoredActionPaths: ['payload'],
       },

@@ -1,5 +1,6 @@
 export enum GameType {
   CHESS,
+  XO,
 }
 
 export enum GameState {

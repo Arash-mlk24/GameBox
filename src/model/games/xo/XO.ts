@@ -1,4 +1,4 @@
-import {GameType, GameState} from '@utils/enums';
+import { GameType, GameState } from '@utils/enums';
 import IGame from '../../IGame';
 import Time from '../../Time';
 import User from '../../User';
@@ -10,8 +10,17 @@ export default class XO implements IGame {
   _type: GameType;
   _state: GameState;
   _time: Time;
+  _rounds: number;
 
-  constructor() {
+  constructor(
+    users: User[],
+    type: GameType,
+    rounds: number,
+  ) {
+    this._users = users;
+    this._type = type;
+    this._rounds = rounds;
     this._manager = new XOManager(this);
+    this._state = GameState.STARTED;
   }
 }
