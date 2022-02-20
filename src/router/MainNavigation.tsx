@@ -31,7 +31,6 @@ export default function MainNavigation() {
                     animation: 'slide_from_left'
                 }}
             />
-
         </Navigator>
     );
 }

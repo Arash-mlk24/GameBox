@@ -11,6 +11,8 @@ export const heights = {
     quickAccess: 240,
     quickAccessGameButton: 108,
     gradientTextButton: 60,
+    xoHeaderHeight: 64,
+    xoComponentSize: commonWidth,
 }
 
 export const widths = {

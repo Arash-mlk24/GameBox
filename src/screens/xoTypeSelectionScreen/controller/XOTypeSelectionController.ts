@@ -34,7 +34,7 @@ export default class XOTypeSelectionController extends BaseController {
     if (this.states.roundsCount) {
       this.dispatch(this.xoActions.setXO({
         xo: new XO(
-          [new User('Arash')],
+          [new User('Mahdis'), new User('bot')],
           GameType.XO,
           this.states.roundsCount!
         ), indicator: undefined

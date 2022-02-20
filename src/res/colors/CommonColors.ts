@@ -12,4 +12,6 @@ export default {
   PURPLE_BUTTON_START: '#A02378',
   PURPLE_BUTTON_END: '#643C96',
   PINK_BUTTON: '#FFF3F3',
+  BLUE: '#4C5AC0',
+  RED: '#E4000F'
 };

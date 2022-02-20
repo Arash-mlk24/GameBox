@@ -10,4 +10,11 @@ export default class BaseController {
     this.baseAcions = baseActions;
     this.baseStates = baseStates;
   }
+
+  public getCountInList = <T>(item: T, list: T[]) => {
+    let count = 0;
+    list.forEach(element => element === item && count++);
+    return count;
+  }
+
 }
