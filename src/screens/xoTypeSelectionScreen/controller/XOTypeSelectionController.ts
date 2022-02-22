@@ -34,7 +34,7 @@ export default class XOTypeSelectionController extends BaseController {
     if (this.states.roundsCount) {
       this.dispatch(this.xoActions.setXO({
         xo: new XO(
-          [new User('Mahdis'), new User('bot')],
+          [new User('Player1'), new User('bot')],
           GameType.XO,
           this.states.roundsCount!
         ), indicator: undefined
@@ -44,7 +44,16 @@ export default class XOTypeSelectionController extends BaseController {
   }
 
   public handleMultiPlayerPress = () => {
-    console.log(`multi...`);
+    if (this.states.roundsCount) {
+      this.dispatch(this.xoActions.setXO({
+        xo: new XO(
+          [new User('Player1'), new User('Player2')],
+          GameType.XO,
+          this.states.roundsCount!
+        ), indicator: undefined
+      }))
+      Helper.getInstance().mainNavigation.navigate('XO');
+    }
   }
 
 }

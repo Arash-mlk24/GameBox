@@ -2,7 +2,7 @@ import BaseController from '@base/BaseController';
 import { xoActions, xoStates } from '@store/slices/xoSlice';
 import store from '@store/store';
 import Helper from '@utils/Helper';
-import { xoBlockNumber } from '@utils/types/ClientTypes';
+import { Block, xoBlockNumber } from '@utils/types/ClientTypes';
 import { Dispatch, SetStateAction } from 'react';
 
 export default class XOController extends BaseController {
@@ -30,17 +30,45 @@ export default class XOController extends BaseController {
     }
   }
 
-  public handleGamePress = (i: number, j: number) => {
-    console.log(`i: ${i}, j: ${j}`);
+  private generateBotActIndex = (blocks: Block[]): { i: number, j: number } => {
+    const randomOptions: Block[] = [];
+    blocks.forEach(el => el.type === '' && randomOptions.push(el))
+    const randomElement = randomOptions[Math.floor(Math.random() * randomOptions.length)];
+    return { i: randomElement.i, j: randomElement.j };
+  }
+
+  private setNewGameAfterPress = (i: number, j: number) => {
     const newBlocks = this.states.xo?.blocks;
+    const newGame = this.states.xo;
     newBlocks!.forEach(el => {
-      el.i === i && el.j === j && el.type === '' && (
-        el.type = this.states.xo?.nextMove!,
-        this.states.xo?.nextMove === 'x' ?
-          this.states.xo?.nextMove = 'o' :
-          this.states.xo?.nextMove = 'x'
-      );
+      if (el.i === i && el.j === j && el.type === '') {
+        el.type = newGame?.nextMove!;
+        if (newGame) {
+          newGame.nextMove === 'x' ?
+            newGame.nextMove = 'o' :
+            newGame.nextMove = 'x';
+          newGame.blocks = newBlocks!;
+        }
+      }
     })
+    return newGame;
+  }
+
+  public handleGamePress = async (i: number, j: number) => {
+
+    const newGame = this.setNewGameAfterPress(i, j);
+    this.dispatch(this.actions.setXO({ xo: newGame!, indicator: this.indicator }));
+
+    if (newGame?.users[1].name === 'bot') {
+      await Helper.getInstance().sleep(2000);
+      console.log(`1`);
+      const botActIndex = this.generateBotActIndex(newGame.blocks);
+      console.log(`2`);
+      const newGameAfterBot = this.setNewGameAfterPress(botActIndex.i, botActIndex.j);
+      console.log(`3`);
+      this.dispatch(this.actions.setXO({ xo: newGameAfterBot!, indicator: this.indicator }));
+    }
+
   }
 
 }

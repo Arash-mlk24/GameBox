@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { XOTypeSelectionState } from '@utils/types/ReduxTypes';
 import { Dispatch, SetStateAction } from 'react';
+import Helper from '@utils/Helper';
 
 const initialState: XOTypeSelectionState = {
     roundsCount: 3,
@@ -15,7 +16,7 @@ export const xoTypeSelectionSlice = createSlice({
             roundsCount: number, indicator: [boolean, Dispatch<SetStateAction<boolean>>]
         }>) => {
             state.roundsCount = action.payload.roundsCount;
-            action.payload.indicator[1](!action.payload.indicator[0]);
+            Helper.getInstance().actOnIndicator(action.payload.indicator!);
         },
         resetInfoSlice: () => initialState,
     },

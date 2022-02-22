@@ -1,5 +1,6 @@
 import { Token } from "@appTypes/ClientTypes";
 import { MainStackNavigationProp, TabStackNavigationProp } from "@appTypes/NavigationTypes";
+import { Dispatch, SetStateAction } from "react";
 
 export default class Helper {
 
@@ -9,6 +10,8 @@ export default class Helper {
     // private _dispatchToken: (token: Token) => void;
     private _tabNavigation: TabStackNavigationProp;
     private _mainNavigation: MainStackNavigationProp;
+    private _actOnIndicator: (indicator: [boolean, Dispatch<SetStateAction<boolean>>]) => void;
+    private _sleep: (timeOut: number) => Promise<void>;
 
     public static getInstance() {
         if (!Helper.instance) {
@@ -44,6 +47,20 @@ export default class Helper {
     }
     public set mainNavigation(value) {
         this._mainNavigation = value;
+    }
+
+    public get actOnIndicator(): (indicator: [boolean, Dispatch<SetStateAction<boolean>>]) => void {
+        return this._actOnIndicator;
+    }
+    public set actOnIndicator(value: (indicator: [boolean, Dispatch<SetStateAction<boolean>>]) => void) {
+        this._actOnIndicator = value;
+    }
+
+    public get sleep(): (timeOut: number) => Promise<void> {
+        return this._sleep;
+    }
+    public set sleep(value: (timeOut: number) => Promise<void>) {
+        this._sleep = value;
     }
 
 }

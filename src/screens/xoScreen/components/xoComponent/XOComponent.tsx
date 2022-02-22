@@ -5,6 +5,7 @@ import React from 'react';
 import { View, Text, StyleSheet, StyleProp, ViewStyle, ImageBackground, TouchableOpacity } from 'react-native';
 import X from '@res/svg/x.svg';
 import O from '@res/svg/o.svg';
+import CommonColors from '@res/colors/CommonColors';
 
 interface IXOComponent {
     size: number,
@@ -45,9 +46,9 @@ function XOComponent(props: IXOComponent) {
                                 >
                                     {
                                         getXO(props.blocks, el, innerEl) === 'x' ?
-                                            <X width={props.size * 0.16} height={props.size * 0.16} /> :
+                                            <X fill={CommonColors.PRIMARY} width={props.size * 0.20} height={props.size * 0.20} /> :
                                             getXO(props.blocks, el, innerEl) === 'o' ?
-                                                <O width={props.size * 0.16} height={props.size * 0.16} /> :
+                                                <O fill={CommonColors.SECONDARY} width={props.size * 0.16} height={props.size * 0.16} /> :
                                                 null
                                     }
                                 </TouchableOpacity>

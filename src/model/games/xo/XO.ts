@@ -31,7 +31,7 @@ export default class XO implements IGame {
     this._state = GameState.STARTED;
     this._currentRound = 1;
     this._wins = [];
-
+    this._nextMove = 'x';
 
     const list: Block[] = [];
     [1, 2, 3].forEach(el => {

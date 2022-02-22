@@ -3,6 +3,7 @@ import { RootState } from '../store';
 import { XOState } from '@utils/types/ReduxTypes';
 import { Dispatch, SetStateAction } from 'react';
 import XO from '../../model/games/xo/XO';
+import Helper from '@utils/Helper';
 
 const initialState: XOState = {
 
@@ -16,7 +17,7 @@ export const xoSlice = createSlice({
             xo: XO, indicator?: [boolean, Dispatch<SetStateAction<boolean>>]
         }>) => {
             state.xo = action.payload.xo;
-            action.payload.indicator && action.payload.indicator[1](!action.payload.indicator[0]);
+            Helper.getInstance().actOnIndicator(action.payload.indicator!);
         },
         resetInfoSlice: () => initialState,
     },

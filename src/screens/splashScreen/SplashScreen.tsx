@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import LinearGradientBG from '@components/LinearGradientBG';
 import LottieView from 'lottie-react-native';
@@ -17,12 +17,20 @@ const SplashScreen = () => {
   const tabNav = useNavigation<TabStackNavigationProp>();
   const mainNav = useNavigation<MainStackNavigationProp>();
 
+  const actOnIndicator = (indicator: [boolean, Dispatch<SetStateAction<boolean>>]) => {
+    indicator && indicator[1](!indicator[0]);
+  }
+
+  const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+
   useEffect(() => {
-    // initialize helper
     setTimeout(() => {
+      // initialize helper
       Helper.getInstance().mainNavigation = mainNav;
       Helper.getInstance().tabNavigation = tabNav;
-      // removeData(Keys.ACTIVE_CAR);
+      Helper.getInstance().actOnIndicator = actOnIndicator;
+      Helper.getInstance().sleep = sleep;
+
       mainNav.replace('TAB');
     }, 3000)
   }, []);
